@@ -9,14 +9,16 @@ Note: originally implemented with java coding standards later partially converte
 
 Java process configuration
 1. Add -XX:+UnlockDiagnosticVMOptions JVM option to java process to detect memory leak (optional)
-2. Run testcase/action (or first histogram before any test)
-3. Run forceful GC using JCMD `jcmd <pid> GC.run` 
-4. Run `jcmd  <pid> GC.class_histogram -all > /data/dump/histogram1.txt`
-5. Run `jcmd <pid> GC.heap_dump /data/dump/dump1.hprof`
-6. Run testcase/action
-7. Run forceful GC again `jcmd <pid> GC.run` 
-8. Run `jcmd <pid> GC.class_histogram -all > /data/dump/histogram2.txt`
-9. Run `jcmd <pid> GC.heap_dump /data/dump/dump2.hprof`
+2. Check and note memory state with: `top` and `free` commands.
+3. Run testcase/action (or first histogram before any test)
+4. Run forceful GC using JCMD `jcmd <pid> GC.run` 
+5. Run `jcmd  <pid> GC.class_histogram -all > /data/dump/histogram1.txt`
+6. Run `jcmd <pid> GC.heap_dump /data/dump/dump1.hprof`
+7. Run testcase/action
+8. Run forceful GC again `jcmd <pid> GC.run` 
+9. Run `jcmd <pid> GC.class_histogram -all > /data/dump/histogram2.txt`
+10. Run `jcmd <pid> GC.heap_dump /data/dump/dump2.hprof`
+11. Check and note memory state with: `top` and `free` commands.
 
 After collecting the histogram files run the script `python jamelea.py -f histogram1.txt -s histogram2.txt` to get the suspect report.
 
