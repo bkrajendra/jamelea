@@ -13,7 +13,7 @@ classNameCol = 3
 
 secondClassNameToHistosMap = {}
 firstClassNameToHistosMap = {}
-xcompanyPackageFilters = ['com\.xxx.*']
+xcompanyPackageFilters = ['com\.confluxsys.*']
 javaPackages = ['^\[.*', '^java.*']
 OutputTable = []
 
