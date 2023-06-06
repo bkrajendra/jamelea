@@ -121,7 +121,7 @@ def get_instance_diff(second_histogram, first_histogram):
 def get_variance(increase, oldValue):
     # To calculate the percentage increase:
     # Increase = New Number - Original Number
-    # % increase = Increase ÷ Original Number × 100.
+    # % increase = Increase / Original Number x 100.
     # If your answer is a negative number then this is a percentage decrease.
     percentage_increase = (increase / int(oldValue)) * 100
     return round(percentage_increase, 2)
