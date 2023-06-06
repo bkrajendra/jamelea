@@ -1,4 +1,4 @@
-# utils
+# JaMeLeA - Java Memory Leak Analysis 
 
 # MemoryLeakSuspectReport.py
 
